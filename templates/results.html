@@ -18,7 +18,7 @@
         <h1>Here are your results...</h1>
         <p>Your text was: {{user_text}}</p>
         <p>The hybrid model's estimate: <b>{{label}} {{"({:.2f} %)".format(probability*100)}}</b></p>
-        <p>The hybrid model is comprised of a Naive Bayes model (which predicted <b>{{nb_label}} {{"{:.2f} %".format(nb_probability*100)}}</b>), and a Logistic Regression model (which predicted <b>{{lr_label}} {{"{:.2f} %".format(nb_probability*100)}}</b>)</p>
+        <p>The hybrid model is comprised of a Naive Bayes model (which predicted <b>{{nb_label}} {{"{:.2f} %".format(nb_probability*100)}}</b>), and a Logistic Regression model (which predicted <b>{{lr_label}} {{"{:.2f} %".format(lr_probability*100)}}</b>)</p>
     </body>
 </html>
 
