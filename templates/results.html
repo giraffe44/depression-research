@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <style>
+
+      body {
+        background-image: url(https://th.bing.com/th/id/R.0049bad41a7df3de737e6b8d88f4570f?rik=bx3r8c4yhQ8RdA&riu=http%3a%2f%2fmedia.vocativ.com%2fphotos%2f2016%2f10%2fDepression-Quickhit_homepage-3-2899729749.png&ehk=g12I%2fsxmhfh1PcU4e%2fUii9PdnlB7MTuZ%2bIcLJAlRCEg%3d&risl=&pid=ImgRaw&r=0);
+        background-size: cover;
+      }
+      
+      h1, p {
+        text-align: center;
+        color: azure;
+        max-width: 50ch;
+        margin-inline: auto;
+        }
+    </style>  
+    <body>
+        <h1>Here are your results...</h1>
+        <p>Your text was: {{user_text}}</p>
+        <p>The hybrid model's estimate: <b>{{label}} {{"({:.2f} %)".format(probability*100)}}</b></p>
+        <p>The hybrid model is comprised of a Naive Bayes model (which predicted <b>{{nb_label}} {{"{:.2f} %".format(nb_probability*100)}}</b>), and a Logistic Regression model (which predicted <b>{{lr_label}} {{"{:.2f} %".format(nb_probability*100)}}</b>)</p>
+    </body>
+</html>
+
+
