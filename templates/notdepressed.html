@@ -1,4 +1,4 @@
-<!-- <html>
+<html>
     <head></head>
     <style>
 
@@ -7,15 +7,30 @@
         background-size: cover;
       }
       
-      h1, p {
+      p {
         text-align: center;
-        color: azure;
         max-width: 50ch;
         margin-inline: auto;
+
+        font-family: 'Modern No. 20', serif;
+        font-weight: normal;
+        font-size: 20px;
+        color: azure;
+        text-shadow: 2px 2px 4px black
+        }
+
+      h1 {
+        text-transform: uppercase;
+        font-family: 'Arial Black', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        color: azure;
+        text-shadow: 2px 2px 4px black
         }
     </style>  
     <body>
-        <h1>Here are your results...</h1>
+        <h1>Here are your results... </h1>
         <p>Your text was: {{user_text}}</p>
         <p>The hybrid model's estimate: <b>{{label}} {{"({:.2f} %)".format(probability*100)}}</b></p>
         <p>The hybrid model is comprised of a Naive Bayes model (which predicted <b>{{nb_label}} {{"{:.2f} %".format(nb_probability*100)}}</b>), and a Logistic Regression model (which predicted <b>{{lr_label}} {{"{:.2f} %".format(lr_probability*100)}}</b>)</p>
