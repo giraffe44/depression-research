@@ -1,10 +1,12 @@
 <html>
     <head>
         <style>
-            h1, p, form {
+            p, form {
                 text-align: center;
                 color: azure
+                
             }
+            
             textarea {
                 text-align: justify;
                 display: block;
@@ -18,19 +20,39 @@
             .p1 {
                 font-family: 'Modern No. 20', serif;
                 font-weight: bold;
+                font-size: 22px;
+                }
+
+            .p2 {
+                font-family: 'Modern No. 20', serif;
+                font-weight: normal;
                 font-size: 20px;
                 }
+
+            .p3 {
+                font-family: 'Modern No. 20', serif;
+                font-weight: italic;
+                font-size: 20px;
+                }
+
+            .h1 {
+                font-family: 'Mongolian Baiti', serif;
+                font-weight: bold;
+                font-size: 20px;
+                }
+
+
 
            
         </style>
     </head>
     <body>
-        <h1>Depression and Suicidal Ideation Detector</h1>
-        <p class="p1">Disclaimer:</p>
-        <p> This is in no way an official diagnosis, the information provided is for</p>
-        <p>research purposes only and is not a substitute for professional medical advice. Always consult </p>
-        <p>a medical professional if you are seeking a diagnosis or advice. </p>
-        <p>Enter your text below and hit send</p>
+        <h1 class="h1">Depression and Suicidal Ideation Detector</h1>
+        <p class="p1">Disclaimer :</p>
+        <p class="p2">This is in no way an official diagnosis, the information provided is for</p>
+        <p class="p2">research purposes only and is not a substitute for professional medical advice. Always consult </p>
+        <p class="p2">a medical professional if you are seeking a diagnosis or advice. </p>
+        <p class="p3">Enter your text below and hit send</p>
         <form method="post">
             <textarea name="user_text" rows="10" cols="30"></textarea>
             <input type="submit">
