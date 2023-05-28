@@ -19,20 +19,52 @@
         text-shadow: 2px 2px 4px black
         }
 
+      .questionnaire {
+        font-family: 'Arial Black', sans-serif;
+        font-style: normal;
+        font-size: 30px;
+        text-shadow: 2px 2px 4px black;
+      }
+
+      a:link {
+        color: azure;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        color: rgb(219, 94, 21);
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      a:active {
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+        text-decoration: underline;
+      }
+
       h1 {
         text-transform: uppercase;
         font-family: 'Arial Black', sans-serif;
         font-weight: bold;
-        font-size: 30px;
+        font-size: 34px;
         text-align: center;
         color: azure;
         text-shadow: 2px 2px 4px black
         }
+        
     </style>  
     <body>
         <h1>Here are your results... </h1>
         <p>Your text was: {{user_text}}</p>
         <p>The hybrid model's estimate: <b>{{label}} {{"({:.2f} %)".format(probability*100)}}</b></p>
         <p>The hybrid model is comprised of a Naive Bayes model (which predicted <b>{{nb_label}} {{"{:.2f} %".format(nb_probability*100)}}</b>), and a Logistic Regression model (which predicted <b>{{lr_label}} {{"{:.2f} %".format(lr_probability*100)}}</b>)</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p class="questionnaire">Please leave your feedback on this website using this link: <a href="https://forms.gle/psbAidbVMsGeAUMM9"><b>GOOGLE FORMS QUESTIONNAIRE</b></a></p>
     </body>
 </html>

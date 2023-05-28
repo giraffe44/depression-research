@@ -28,7 +28,7 @@ def index():
         ensemble_prediction_label = le.inverse_transform([np.argmax(ensemble_prediction_probabilities)])
         response_page = ''
         if ensemble_prediction_label == 'not depressed': 
-            response_page = 'not depressed.html'
+            response_page = 'notdepressed.html'
         elif ensemble_prediction_label == 'depressed':
             response_page = 'depressed.html'
         return render_template(response_page, user_text=user_text, 
