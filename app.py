@@ -26,13 +26,12 @@ def index():
         lr_prediction_label = le.inverse_transform(lr_model.predict(encoded_input))
         ensemble_prediction_probabilities = (nb_prediction_probabilities + lr_prediction_probabilities) / 2
         ensemble_prediction_label = le.inverse_transform([np.argmax(ensemble_prediction_probabilities)])
+        response_page = ''
         if ensemble_prediction_label == 'not depressed': 
-            return render_template('notdepressed.html', user_text=user_text, 
-                               label=ensemble_prediction_label[0].upper(), probability=ensemble_prediction_probabilities[0, np.argmax(ensemble_prediction_probabilities)], 
-                               nb_label=nb_prediction_label[0].upper(), nb_probability=nb_prediction_probabilities[0, np.argmax(nb_prediction_probabilities)], 
-                               lr_label=lr_prediction_label[0].upper(), lr_probability=lr_prediction_probabilities[0, np.argmax(lr_prediction_probabilities)])
+            response_page = 'not depressed.html'
         elif ensemble_prediction_label == 'depressed':
-            return render_template('depressed.html', user_text=user_text, 
+            response_page = 'depressed.html'
+        return render_template(response_page, user_text=user_text, 
                                label=ensemble_prediction_label[0].upper(), probability=ensemble_prediction_probabilities[0, np.argmax(ensemble_prediction_probabilities)], 
                                nb_label=nb_prediction_label[0].upper(), nb_probability=nb_prediction_probabilities[0, np.argmax(nb_prediction_probabilities)], 
                                lr_label=lr_prediction_label[0].upper(), lr_probability=lr_prediction_probabilities[0, np.argmax(lr_prediction_probabilities)])

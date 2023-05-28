@@ -10,7 +10,7 @@
       p {
         text-align: center;
         color: azure;
-        max-width: 50ch;
+        max-width: 55ch;
         margin-inline: auto;
 
         font-family: 'Modern No. 20', serif;
@@ -26,13 +26,62 @@
         text-align: center;
         color: azure
         }
+
+      .text1 {
+        font-family: 'Modern No. 20', serif;
+        font-style: italic;
+        font-size: 24px;
+        color: rgb(219, 94, 21);
+        text-shadow: 2px 2px 4px black;
+      }
+
+      .links {
+        font-family: 'Modern No. 20', serif;
+        font-style: normal;
+        font-size: 22px;
+        text-shadow: 2px 2px 4px black;
+      }
+
+      a:link {
+        color: azure;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        color: rgb(219, 94, 21);
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      a:active {
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+        text-decoration: underline;
+      }
+
+        
     </style>  
     <body>
         <h1>Here are your results... </h1>
         <p>Your text was: {{user_text}}</p>
         <p>The hybrid model's estimate: <b>{{label}} {{"({:.2f} %)".format(probability*100)}}</b></p>
         <p>The hybrid model is comprised of a Naive Bayes model (which predicted <b>{{nb_label}} {{"{:.2f} %".format(nb_probability*100)}}</b>), and a Logistic Regression model (which predicted <b>{{lr_label}} {{"{:.2f} %".format(lr_probability*100)}}</b>)</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <hr>
+        <p class="text1">Here are some useful links to take a look at in case you are worried about the feelings you are experiencing: </p>
+        <p class="links"><a href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/depression/self-care/"><b>Mind</b> - Self-care for depression</a></p>
+        <p class="links"><a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/behaviours/help-for-suicidal-thoughts/"><b>NHS</b> - Help for Suicidal Thoughts</a></p>
+        <p class="links"><a href="https://www.samaritans.org/how-we-can-help/contact-samaritan/"><b>Samaritans</b></a></p>
+        <p class="links"><a href="https://www.helpguide.org/articles/depression/coping-with-depression.htm"><b>HelpGuide</b> - Coping with Depression</a></p>
+    </body>
     </body>
 </html>
+
+
 
 
