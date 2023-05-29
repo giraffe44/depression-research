@@ -18,7 +18,7 @@ def index():
     if request.method == 'GET':
         return render_template('home.html')
     elif request.method == 'POST':
-        user_text = request.form['user_text']
+        user_text = request.form['user_text'].lower()
         encoded_input = cv.transform([user_text]).toarray()
         nb_prediction_probabilities = nb_model.predict_proba(encoded_input)
         nb_prediction_label = le.inverse_transform(nb_model.predict(encoded_input))

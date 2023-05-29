@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
     <head>
         <style>
             p, form {
@@ -17,12 +17,6 @@
             body {
                 background-image: url(https://cdn.dribbble.com/users/730703/screenshots/4159351/attachments/950986/peter-greenwood-folio-illustration-sunrise-cityscape-vector_british-heart-foundation_out-of-the-dark.jpg);
                 background-size: cover;
-                }
-
-            .p1 {
-                font-family: 'Modern No. 20', serif;
-                font-weight: bold;
-                font-size: 22px;
                 }
 
             .p2 {
@@ -57,22 +51,46 @@
                 color: azure
                 }
 
-                
+            em {
+                font-weight: bold;
+                font-style: normal;
+                }
         </style>
     </head>
 
     <body>
         <h1 class="h1">Depression and Suicidal Ideation Detector</h1>
-        <p class="p1">Disclaimer :</p>
-        <p class="p2">This is in no way an official diagnosis, the information provided is for</p>
-        <p class="p2">research purposes only and is not a substitute for professional medical advice. Always consult </p>
-        <p class="p2">a medical professional if you are seeking a diagnosis or advice. </p>
-        <p>&nbsp;</p>
+        <p class="p2"><em>Disclaimer:</em> This is in no way an official diagnosis, the information provided is for<br>research purposes only and is not a substitute for professional medical advice. Always consult<br>a medical professional if you are seeking a diagnosis or advice.</p>
+        <br>
         <p class="p3">Enter your text below and hit send</p>
         <p class="p4">(Prompt: your feelings, thoughts or a simple statement!)</p>
 
-        <form method="post">
-            <textarea name="user_text" rows="10" cols="30"></textarea>
+        <script>
+            function validateInput() {
+                let userText = form.user_text.value;
+                /* 
+                * either: 
+                *    (1) starts with a word followed by either:
+                *        (1) any number of spaces
+                *        (2) one space and any number of any character
+                *    (2) contains a word that is both:
+                *        (1) preceeded by any number of any character followed by a space
+                *        (2) followed by either:
+                *            (1) any number of spaces
+                *            (2) one space and any number of any character
+                */
+                if (/^[a-z]+([/S]*$| [\s\S]*)|[\s\S]* [a-z]+([/S]*$| [\s\S]*)/i.test(userText)) {
+                    return true;
+                } else {
+                    form.user_text.setCustomValidity('Invalid input. Your input must contain at least one word');
+                    form.user_text.reportValidity();                   
+                    return false;
+                }
+            }
+        </script>
+
+        <form id="form" onsubmit="return validateInput()" method="post">
+            <textarea oninput="setCustomValidity('')" required name="user_text" rows="10" cols="30"></textarea>
             <input type="submit">
         </form>
     </body>
