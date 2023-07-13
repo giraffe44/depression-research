@@ -13,10 +13,19 @@
 
         font-family: 'Modern No. 20', serif;
         font-weight: normal;
-        font-size: 20px;
+        font-size: 24px;
         color: azure;
         text-shadow: 2px 2px 4px black
         }
+
+      .p4 {
+        font-family: 'Modern No. 20', serif;
+        font-weight: bold;
+        font-size: 28px;
+        letter-spacing:0.10ch;
+        color:  rgb(255, 63, 131);
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+      }
 
       .questionnaire {
         font-family: 'Arial Black', sans-serif;
@@ -63,6 +72,15 @@
         <h1>Here are your results</h1>
         <p>Your text was: {{user_text}}</p>
         <p>The hybrid model's estimate: <em>{{label}} {{"({:.2f} %)".format(probability*100)}}</em></p>
+
+        {% if probability*100 >= 80 %}
+        <p class="p4">You are highly unlikely to be suffering from suicidal ideation and/or depression.</p>
+        {% elif probability*100 > 50 %}
+        <p class="p4">You are unlikely to be suffering from suicidal ideation and/or depression.</p>
+        {% else %}
+        <p class="p4">You may be suffering from depression and/or suicidal ideation.</p>
+        {% endif %}
+
         <p>The hybrid model is comprised of a Naive Bayes model (which predicted <em>{{nb_label}} {{"{:.2f} %".format(nb_probability*100)}}</em>), and a Logistic Regression model (which predicted <em>{{lr_label}} {{"{:.2f} %".format(lr_probability*100)}}</em>)</p>
         <br><br><br><br><br><br>
         <hr>

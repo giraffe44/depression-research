@@ -33,6 +33,7 @@ def index():
         elif ensemble_prediction_label == 'depressed':
             response_page = 'depressed.html'
         return render_template(response_page, user_text=user_text, 
+                               depression_probability = ensemble_prediction_probabilities,
                                label=ensemble_prediction_label[0].upper(), probability=ensemble_prediction_probabilities[0, np.argmax(ensemble_prediction_probabilities)], 
                                nb_label=nb_prediction_label[0].upper(), nb_probability=nb_prediction_probabilities[0, np.argmax(nb_prediction_probabilities)], 
                                lr_label=lr_prediction_label[0].upper(), lr_probability=lr_prediction_probabilities[0, np.argmax(lr_prediction_probabilities)])
