@@ -105,8 +105,10 @@
 
         {% if probability*100 >= 80 %}
         <p class="p3">You are highly likely to be suffering from suicidal ideation and/or depression.</p>
-        {% elif probability*100 > 50 %}
+        {% elif probability*100 >= 60 %}
         <p class="p3">You are likely to be suffering from suicidal ideation and/or depression.</p>
+        {% elif probability*100 > 50 %}
+        <p class="p3">You are somewhat likely to be suffering from suicidal ideation and/or depression.</p>
         {% else %}
         <p class="p3">You may be suffering from depression and/or suicidal ideation.</p>
         {% endif %}
