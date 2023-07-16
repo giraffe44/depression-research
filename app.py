@@ -13,6 +13,7 @@ lr_model = pickle.load(open('lr_model', 'rb'))
 
 app = Flask(__name__)
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
